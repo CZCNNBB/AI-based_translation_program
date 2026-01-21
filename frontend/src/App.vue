@@ -43,10 +43,9 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import { EditPen, Document, Files, Setting } from "@element-plus/icons-vue";
+import { EditPen, Document, Files } from "@element-plus/icons-vue";
 import TextTranslation from "./components/TextTranslation.vue";
 import BatchTranslation from "./components/BatchTranslation.vue";
-import Settings from "./components/Settings.vue";
 
 const activeMenu = ref("text");
 
@@ -56,8 +55,6 @@ const currentComponent = computed(() => {
       return TextTranslation;
     case "batch":
       return BatchTranslation;
-    case "settings":
-      return Settings;
     default:
       return TextTranslation;
   }
@@ -69,8 +66,6 @@ const headerTitle = computed(() => {
       return "单文本翻译";
     case "batch":
       return "批量翻译";
-    case "settings":
-      return "系统设置";
     default:
       return "翻译引擎";
   }
