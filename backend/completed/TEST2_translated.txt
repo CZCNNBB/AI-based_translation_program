@@ -1,0 +1,5 @@
+{
+  "detected_language": "英语",
+  "translated_text": "你好，zmy，欢迎来到Chain。",
+  "summary": "本翻译将英文问候语准确转换为中文，保留原名和项目名称，确保语气友好且表达流畅。"
+}

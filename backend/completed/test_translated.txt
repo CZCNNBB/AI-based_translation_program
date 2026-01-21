@@ -1,0 +1,5 @@
+{
+  "detected_language": "英语",
+  "translated_text": "你好，czc，欢迎加入Chain。",
+  "summary": "本翻译准确传达了原文的欢迎语境，保留了专有名词\"Chain\"，采用简洁友好的中文表达，符合原句的口语化风格和社交场景语气。"
+}

@@ -1,0 +1,28 @@
+# 批量翻译配置文件示例
+# 使用方法: python translator_main.py --batch --batch_config batch_config.yaml
+
+# 输入目录：包含待翻译的文本文件
+input_dir: "./input"
+
+# 输出目录：翻译结果将保存为 JSON 文件
+output_dir: "./completed"
+
+# 目标语言（可选，默认为中文）
+target_lang: "Chinese"
+
+# 专业领域（可选）
+# 可选值：医疗、法律、计算机、文学、金融等
+domain: "计算机"
+
+# 专业词汇表（可选）
+# 支持两种格式：
+# 1. Key=Value 格式（逗号分隔）
+# 2. JSON 格式
+glossary: "AI=人工智能,Machine Learning=机器学习,Deep Learning=深度学习,Neural Network=神经网络"
+
+# 是否生成摘要（可选，默认为 false）
+summary: false
+
+# 文件匹配模式（可选，默认为 *.txt）
+# 可以使用通配符，如 *.txt, *.md, *.json 等
+file_pattern: "*.txt"

@@ -1,0 +1,95 @@
+DifyはオープンソースのLLMアプリケーション開発プラットフォームです。直感的なインターフェイスには、AIワークフロー、RAGパイプライン、エージェント機能、モデル管理、観測機能などが組み合わさっており、プロトタイプから生産まで迅速に進めることができます。以下の機能が含まれます：
+
+
+1. ワークフロー: 強力なAIワークフローをビジュアルキャンバス上で構築し、テストできます。すべての機能、および以下の機能を使用できます。
+
+2. 総合的なモデルサポート: 数百ものプロプライエタリ/オープンソースのLLMと、数十もの推論プロバイダーおよびセルフホスティングソリューションとのシームレスな統合を提供します。GPT、Mistral、Llama3、OpenAI APIと互換性のあるすべてのモデルを統合されています。サポートされているモデルプロバイダーの完全なリストはこちらをご覧ください。
+
+providers-v5
+
+3. プロンプトIDE: プロンプトの作成、モデルパフォーマンスの比較が行え、チャットベースのアプリに音声合成などの機能も追加できます。
+
+4. RAGパイプライン: ドキュメントの取り込みから検索までをカバーする広範なRAG機能ができます。ほかにもPDF、PPT、その他の一般的なドキュメントフォーマットからのテキスト抽出のサポートも提供します。
+
+5. エージェント機能: LLM Function CallingやReActに基づくエージェントの定義が可能で、AIエージェント用のプリビルトまたはカスタムツールを追加できます。Difyには、Google検索、DALL·E、Stable Diffusion、WolframAlphaなどのAIエージェント用の50以上の組み込みツールが提供します。
+
+6. LLMOps: アプリケーションのログやパフォーマンスを監視と分析し、生産のデータと注釈に基づいて、プロンプト、データセット、モデルを継続的に改善できます。
+
+7. Backend-as-a-Service: すべての機能はAPIを提供されており、Difyを自分のビジネスロジックに簡単に統合できます。
+
+Difyの使用方法
+クラウド
+こちらのDify Cloudサービスを利用して、セットアップ不要で試すことができます。サンドボックスプランには、200回のGPT-4呼び出しが無料で含まれています。
+
+Dify Community Editionのセルフホスティング
+このスタートガイドを使用して、ローカル環境でDifyを簡単に実行できます。 詳しくはドキュメントをご覧ください。
+
+企業/組織向けのDify
+企業中心の機能を提供しています。メールを送信して企業のニーズについて相談してください。
+
+AWSを使用しているスタートアップ企業や中小企業の場合は、AWS MarketplaceのDify Premiumをチェックして、ワンクリックで自分のAWS VPCにデプロイできます。さらに、手頃な価格のAMIオファリングとして、ロゴやブランディングをカスタマイズしてアプリケーションを作成するオプションがあります。
+
+最新の情報を入手
+GitHub上でDifyにスターを付けることで、Difyに関する新しいニュースを受け取れます。
+
+star-us
+
+クイックスタート
+Difyをインストールする前に、お使いのマシンが以下の最小システム要件を満たしていることを確認してください：
+
+CPU >= 2コア
+RAM >= 4GB
+
+Difyサーバーを起動する最も簡単な方法は、docker-compose.ymlファイルを実行することです。インストールコマンドを実行する前に、マシンにDockerとDocker Composeがインストールされていることを確認してください。
+
+cd docker
+cp .env.example .env
+docker compose up -d
+実行後、ブラウザでhttp://localhost/installにアクセスし、初期化プロセスを開始できます。
+
+Difyに貢献したり、追加の開発を行う場合は、ソースコードからのデプロイガイドを参照してください。
+
+次のステップ
+設定をカスタマイズする必要がある場合は、.env.example ファイルのコメントを参照し、.env ファイルの対応する値を更新してください。さらに、デプロイ環境や要件に応じて、docker-compose.yaml ファイル自体を調整する必要がある場合があります。たとえば、イメージのバージョン、ポートのマッピング、ボリュームのマウントなどを変更します。変更を加えた後は、docker-compose up -d を再実行してください。利用可能な環境変数の全一覧は、こちらで確認できます。
+
+Grafanaを使用したメトリクス監視
+Grafanaにダッシュボードをインポートし、DifyのPostgreSQLデータベースをデータソースとして使用して、アプリ、テナント、メッセージなどの粒度でメトリクスを監視します。
+
+@bowenliang123によるGrafanaダッシュボード
+Kubernetesでのデプロイ
+高可用性設定を設定する必要がある場合、コミュニティはHelm ChartsとYAMLファイルにより、DifyをKubernetesにデプロイすることができます。
+
+Helm Chart by @LeoQuote
+Helm Chart by @BorisPolonsky
+Helm Chart by @magicsong
+YAML file by @Winson-030
+YAML file by @wyy-holding
+🚀 新着！YAML ファイル（Dify v1.6.0 対応）by @Zhoneym
+Terraformを使用したデプロイ
+terraform を使用して、ワンクリックでDifyをクラウドプラットフォームにデプロイします
+
+Azure Global
+@nikawangによるAzure Terraform
+Google Cloud
+@sotazumによるGoogle Cloud Terraform
+AWS CDK を使用したデプロイ
+CDK を使用して、DifyをAWSにデプロイします
+
+AWS
+@KevinZhaoによるAWS CDK (EKS based)
+@tmokmssによるAWS CDK (ECS based)
+Alibaba Cloud
+Alibaba Cloud Computing Nest
+
+Alibaba Cloud Data Management
+Alibaba Cloud Data Management を利用して、DifyをAlibaba Cloudへワンクリックでデプロイできます
+
+AKSへのデプロイにAzure Devops Pipelineを使用
+Azure Devops Pipeline Helm Chart by @LeoZhangを使用してDifyをAKSにワンクリックでデプロイ
+
+貢献
+コードに貢献したい方は、Contribution Guideを参照してください。 同時に、DifyをSNSやイベント、カンファレンスで共有してサポートしていただけると幸いです。
+
+Difyを英語または中国語以外の言語に翻訳してくれる貢献者を募集しています。興味がある場合は、詳細についてはi18n READMEを参照してください。また、Discordコミュニティサーバーのglobal-usersチャンネルにコメントを残してください。
+
+貢献者

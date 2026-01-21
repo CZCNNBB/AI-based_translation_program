@@ -1,0 +1,68 @@
+# Ollama 翻译引擎配置文件
+
+# Ollama 服务配置
+ollama:
+  # Ollama 服务地址
+  host: "127.0.0.1"
+  # Ollama 服务端口
+  port: 11434
+  # 默认使用的模型名称（如: llama3, qwen, mistral 等）
+  model: "qwen3:8b"
+  #model: "qwen2.5:3b"
+  # API 超时时间（秒）
+  timeout: 600
+  # 最大重试次数
+  max_retries: 3
+
+# 翻译参数配置
+translation:
+  # 默认目标语言
+  default_target_lang: "Chinese"
+  # 最大生成长度（tokens）
+  max_tokens: 2000
+  # 温度参数（0.0-2.0，越低越确定）
+  temperature: 0.3
+  # Top-p 采样参数
+  top_p: 0.9
+  # 分段翻译配置
+  chunk_translation:
+    # 启用分段翻译
+    enabled: true
+    # 单段最大字符数（超过此长度将自动分段）
+    max_chunk_size: 2000
+    # 分段重叠字符数（保持上下文连续性）
+    chunk_overlap: 100
+  # 摘要生成配置
+  summary_generation:
+    # 默认是否生成摘要
+    enabled: true
+    # 摘要最大长度（字数）
+    max_length: 100
+    # 摘要生成提示词模板
+    prompt_template: |
+      你是一个文本摘要专家，擅长为{target_lang}文本生成简洁的摘要。
+
+      任务：为以下{target_lang}文本生成一个简短的摘要（不超过{max_length}字）。
+
+      要求：
+      1. 准确概括文本的主要内容
+      2. 语言简洁明了
+      3. 只输出摘要内容，不要输出任何其他内容
+
+  # 语言检测配置
+  language_detection:
+    # 是否启用语言检测缓存（相同文本不重复检测）
+    cache_enabled: true
+
+# 文件管理配置
+file_management:
+  # 待翻译文件目录（脚本会自动读取该目录中的文件进行翻译）
+  input_dir: "./input"
+  # 完成任务文件夹（翻译结果将保存到该目录）
+  completed_dir: "./completed"
+  # 原始文件归档文件夹（存放已翻译的原始文件）
+  archive_dir: "./archive"
+  # 文件匹配模式（默认为 *.txt）
+  file_pattern: "*.txt"
+  # 翻译完成后是否删除原文件（true: 直接删除，false: 移动到归档文件夹）
+  delete_after_translation: false
