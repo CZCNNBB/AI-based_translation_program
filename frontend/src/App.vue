@@ -19,10 +19,6 @@
             <el-icon><Files /></el-icon>
             <span>批量翻译</span>
           </el-menu-item>
-          <el-menu-item index="settings">
-            <el-icon><Setting /></el-icon>
-            <span>设置</span>
-          </el-menu-item>
         </el-menu>
       </el-aside>
 
